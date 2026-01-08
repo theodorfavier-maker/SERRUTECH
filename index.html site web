@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serrurier Perpignan 66 - Urgence 24h/7j - Intervention 20 min</title>
+    <meta name="description" content="Serrurier professionnel à Perpignan et dans tout le 66. Ouverture de porte, changement de serrure A2P. Devis gratuit et sans surprise.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Serrutech",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Perpignan",
+        "addressRegion": "66",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "42.6887",
+        "longitude": "2.8948"
+      },
+      "url": "https://theodorfavier-maker.github.io",
+      "telephone": "+33782795833",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .bg-deep-night { background: linear-gradient(135deg, #0f0f11 0%, #1a1a1f 100%); }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Serrutech" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-6 font-bold">
+                <a href="ouverture-de-porte.html" class="hover:text-blue-600">Ouverture</a>
+                <a href="changement-de-serrure.html" class="hover:text-blue-600">Serrures</a>
+                <a href="contact.html" class="hover:text-blue-600">Contact</a>
+            </div>
+            <a href="tel:+33782795833" class="bg-black text-white px-6 py-2 rounded-full font-bold hover:bg-gray-800 transition">
+                📞 07 82 79 58 33
+            </a>
+        </div>
+    </nav>
+
+    <header class="bg-deep-night text-white py-20 px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-orbitron mb-6 uppercase tracking-wider">Serrurier Perpignan & 66</h1>
+        <p class="text-xl mb-8 opacity-80">Intervention express en 20 minutes • 7j/7 • 24h/24</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="tel:+33782795833" class="bg-white text-black text-xl font-bold px-10 py-4 rounded-xl hover:scale-105 transition shadow-2xl">
+                Appeler un dépanneur
+            </a>
+        </div>
+    </header>
+
+    <section class="container mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Nos services de serrurerie dans les Pyrénées-Orientales</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-blue-500 transition">
+                <div class="text-4xl mb-4">🔓</div>
+                <h3 class="text-xl font-bold mb-2">Ouverture de porte</h3>
+                <p class="text-gray-600">Porte claquée ou fermée à clé ? Nous intervenons sans casser votre serrure.</p>
+            </div>
+            </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <img src="logo.png" alt="Serrutech" class="h-10 mb-4 filter invert brightness-200">
+                <p class="opacity-60 text-sm italic">Votre artisan de confiance dans le 66.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Zones d'intervention</h4>
+                <ul class="text-gray-400 text-sm space-y-2">
+                    <li>Serrurier Perpignan</li>
+                    <li>Serrurier Canet-en-Roussillon</li>
+                    <li>Serrurier Saint-Estève</li>
+                    <li>Serrurier Cabestany / Argelès</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Légal</h4>
+                <ul class="text-gray-400 text-sm space-y-2">
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-0 left-0 right-0 p-4 md:hidden z-50">
+        <a href="tel:+33782795833" class="flex items-center justify-center bg-green-600 text-white py-4 rounded-full shadow-2xl font-bold text-lg animate-bounce">
+            📞 URGENCE : 07 82 79 58 33
+        </a>
+    </div>
+
+</body>
+</html>
