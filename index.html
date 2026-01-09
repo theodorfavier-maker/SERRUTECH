@@ -22,15 +22,9 @@
       backdrop-filter: blur(10px);
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
     }
-    .logo-img {
-      width: 100%; max-width: 320px; height: auto; margin-bottom: 5px;
-      filter: invert(1) brightness(1.2); 
-    }
-    .sub{
-      font-family: 'Orbitron', sans-serif; margin: 0 0 30px;
-      opacity:.8; font-size: 13px; letter-spacing: 2px;
-      text-transform: uppercase; color: #ffffff;
-    }
+    .logo-img { width: 100%; max-width: 320px; height: auto; margin-bottom: 5px; filter: invert(1) brightness(1.2); }
+    .sub{ font-family: 'Orbitron', sans-serif; margin: 0 0 30px; opacity:.8; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+    
     .btn{
       display:flex; align-items:center; justify-content:center; gap:12px;
       width:100%; padding:18px; margin:12px 0; background:#ffffff;
@@ -39,26 +33,49 @@
       box-shadow:0 8px 15px rgba(0,0,0,0.3); transition: all 0.2s ease;
     }
     .btn:hover{ transform:translateY(-3px); background:#f0f0f0; }
-    .btn-site { background: #e2e2e2; opacity: 0.9; }
+    
+    #maintenance-screen { display: none; animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
     .footer{ margin-top:25px; font-size:10px; opacity:.3; font-family: 'Orbitron', sans-serif; }
   </style>
 </head>
 <body>
-  <div class="card">
+
+  <div id="main-card" class="card">
     <img src="logo.png" alt="Serrutech Logo" class="logo-img">
     <div class="sub">Artisan serrurier</div>
 
     <a class="btn" href="tel:+33782795833">📞 Appeler maintenant</a>
-
     <a class="btn" href="mailto:theodor.favier@icloud.com">✉️ Envoyer un Email</a>
-
-    <button class="btn btn-site" onclick="alert('🔧 NOTRE SITE EST EN MAINTENANCE\n\nNous préparons une nouvelle version pour tout le 66 !\n\nEn attendant, notre service d\'urgence reste disponible 24h/24 par téléphone.')">
-      🌐 Notre Site Web
-    </button>
-
+    <button class="btn" onclick="showMaintenance()">🌐 Notre Site Web</button>
     <a class="btn" href="https://www.instagram.com/serrutech" target="_blank">📸 Instagram</a>
-
+    
     <div class="footer">© 2026 SERRUTECH</div>
   </div>
+
+  <div id="maintenance-screen" class="card">
+    <h1 style="font-family: 'Orbitron', sans-serif; font-size: 20px; margin-bottom: 20px; letter-spacing: 1px;">SITE EN MAINTENANCE</h1>
+    <p style="opacity: 0.8; line-height: 1.5; margin-bottom: 30px; font-size: 15px;">
+      Nous préparons notre nouveau site web pour tout le <strong>66</strong>.<br><br>
+      Besoin d'un serrurier immédiatement ?
+    </p>
+    
+    <a class="btn" href="tel:+33782795833">📞 Appeler maintenant</a>
+    
+    <button onclick="showMain()" style="background:none; border:none; color:white; text-decoration:underline; margin-top:25px; cursor:pointer; opacity:0.4; font-size: 12px;">Retour au menu</button>
+  </div>
+
+  <script>
+    function showMaintenance() {
+      document.getElementById('main-card').style.display = 'none';
+      document.getElementById('maintenance-screen').style.display = 'block';
+    }
+    function showMain() {
+      document.getElementById('maintenance-screen').style.display = 'none';
+      document.getElementById('main-card').style.display = 'block';
+    }
+  </script>
+
 </body>
 </html>
