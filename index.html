@@ -11,19 +11,19 @@
       margin:0; min-height:100vh;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(135deg, #0f0f11 0%, #1a1a1f 50%, #0f0f11 100%);
+      background: radial-gradient(circle at center, #1a1a1f 0%, #08080a 100%);
       color:#fff; padding: 20px;
     }
     .card{
       background:rgba(255,255,255,.07);
       border:1px solid rgba(255,255,255,.12);
-      border-radius:24px; padding:35px 20px;
+      border-radius:24px; padding:30px 20px;
       width:100%; max-width:420px; text-align:center;
       backdrop-filter: blur(10px);
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
     }
     .logo-img {
-      width: 100%; max-width: 250px; height: auto; margin-bottom: 5px;
+      width: 100%; max-width: 320px; height: auto; margin-bottom: 5px;
       filter: invert(1) brightness(1.2); 
     }
     .sub{
@@ -35,10 +35,11 @@
       display:flex; align-items:center; justify-content:center; gap:12px;
       width:100%; padding:18px; margin:12px 0; background:#ffffff;
       color:#0b0b0c; text-decoration:none; border-radius:18px;
-      font-weight:800; font-size:16px;
+      font-weight:800; font-size:16px; cursor: pointer; border: none;
       box-shadow:0 8px 15px rgba(0,0,0,0.3); transition: all 0.2s ease;
     }
     .btn:hover{ transform:translateY(-3px); background:#f0f0f0; }
+    .btn-site { background: #e2e2e2; opacity: 0.9; }
     .footer{ margin-top:25px; font-size:10px; opacity:.3; font-family: 'Orbitron', sans-serif; }
   </style>
 </head>
@@ -46,10 +47,17 @@
   <div class="card">
     <img src="logo.png" alt="Serrutech Logo" class="logo-img">
     <div class="sub">Artisan serrurier</div>
+
     <a class="btn" href="tel:+33782795833">📞 Appeler maintenant</a>
+
     <a class="btn" href="mailto:theodor.favier@icloud.com">✉️ Envoyer un Email</a>
-    <a class="btn" href="https://serrutech.fr" target="_blank">🌐 Notre Site Web</a>
+
+    <button class="btn btn-site" onclick="alert('🔧 NOTRE SITE EST EN MAINTENANCE\n\nNous préparons une nouvelle version pour tout le 66 !\n\nEn attendant, notre service d\'urgence reste disponible 24h/24 par téléphone.')">
+      🌐 Notre Site Web
+    </button>
+
     <a class="btn" href="https://www.instagram.com/serrutech" target="_blank">📸 Instagram</a>
+
     <div class="footer">© 2026 SERRUTECH</div>
   </div>
 </body>
