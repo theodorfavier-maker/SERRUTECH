@@ -4,76 +4,150 @@
   <meta charset="UTF-8">
   <title>Serrutech - Artisan Serrurier</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    *{ box-sizing: border-box; }
+    :root {
+      --bg: #050505;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 255, 255, 0.1);
+      --accent: #ffffff;
+    }
+    *{ box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     body{
       margin:0; min-height:100vh;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      font-family: 'Inter', sans-serif;
       display:flex; align-items:center; justify-content:center;
-      background: radial-gradient(circle at center, #1a1a1f 0%, #08080a 100%);
-      color:#fff; padding: 20px;
+      background: radial-gradient(circle at 50% 50%, #1a1a20 0%, #050505 100%);
+      color:#fff; padding: 15px;
     }
+    
     .card{
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:24px; padding:30px 20px;
-      width:100%; max-width:420px; text-align:center;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 40px 25px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .logo-img { width: 100%; max-width: 320px; height: auto; margin-bottom: 5px; filter: invert(1) brightness(1.2); }
-    .sub{ font-family: 'Orbitron', sans-serif; margin: 0 0 30px; opacity:.8; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
-    
-    .btn{
-      display:flex; align-items:center; justify-content:center; gap:12px;
-      width:100%; padding:18px; margin:12px 0; background:#ffffff;
-      color:#0b0b0c; text-decoration:none; border-radius:18px;
-      font-weight:800; font-size:16px; cursor: pointer; border: none;
-      box-shadow:0 8px 15px rgba(0,0,0,0.3); transition: all 0.2s ease;
-    }
-    .btn:hover{ transform:translateY(-3px); background:#f0f0f0; }
-    
-    #maintenance-screen { display: none; animation: fadeIn 0.4s ease; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    .footer{ margin-top:25px; font-size:10px; opacity:.3; font-family: 'Orbitron', sans-serif; }
+    /* LOGO XXL - Prend toute la largeur disponible */
+    .logo-container {
+      width: 120%; /* On dépasse un peu les marges internes */
+      margin-left: -10%; 
+      margin-bottom: 10px;
+    }
+    .logo-img {
+      width: 100%;
+      height: auto;
+      filter: invert(1) brightness(2);
+      display: block;
+    }
+
+    .sub{
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 40px;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 20px;
+      margin: 12px 0;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.3px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      transform: scale(1.02);
+      filter: brightness(0.9);
+    }
+
+    /* Style spécifique Maintenance */
+    .btn-outline {
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      transform: none;
+    }
+
+    #maintenance-screen { display: none; }
+
+    .footer{
+      margin-top: 35px;
+      font-size: 9px;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 2px;
+      opacity: 0.2;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate { animation: fadeIn 0.4s ease forwards; }
   </style>
 </head>
 <body>
 
-  <div id="main-card" class="card">
-    <img src="logo.png" alt="Serrutech Logo" class="logo-img">
+  <div id="main-card" class="card animate">
+    <div class="logo-container">
+      <img src="logo.png" alt="Serrutech Logo" class="logo-img">
+    </div>
     <div class="sub">Artisan serrurier</div>
 
-    <a class="btn" href="tel:+33782795833">📞 Appeler maintenant</a>
-    <a class="btn" href="mailto:theodor.favier@icloud.com">✉️ Envoyer un Email</a>
-    <button class="btn" onclick="showMaintenance()">🌐 Notre Site Web</button>
-    <a class="btn" href="https://www.instagram.com/serrutech" target="_blank">📸 Instagram</a>
+    <a class="btn" href="tel:+33782795833">Appeler maintenant</a>
+    <a class="btn btn-outline" href="mailto:theodor.favier@icloud.com">Envoyer un Email</a>
+    <button class="btn btn-outline" onclick="showMaintenance()">Notre Site Web</button>
+    <a class="btn btn-outline" href="https://www.instagram.com/serrutech" target="_blank">Instagram</a>
     
     <div class="footer">© 2026 SERRUTECH</div>
   </div>
 
   <div id="maintenance-screen" class="card">
-    <h1 style="font-family: 'Orbitron', sans-serif; font-size: 20px; margin-bottom: 20px; letter-spacing: 1px;">SITE EN MAINTENANCE</h1>
-    <p style="opacity: 0.8; line-height: 1.5; margin-bottom: 30px; font-size: 15px;">
-      Nous préparons notre nouveau site web pour tout le <strong>66</strong>.<br><br>
-      Besoin d'un serrurier immédiatement ?
+    <div style="font-size: 40px; margin-bottom: 20px;">⚙️</div>
+    <h1 style="font-family: 'Orbitron', sans-serif; font-size: 18px; margin-bottom: 15px; letter-spacing: 2px;">MAINTENANCE</h1>
+    <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin-bottom: 35px;">
+      Nous reconstruisons une plateforme complète pour les Pyrénées-Orientales.<br><br>
+      Besoin d'un serrurier ?
     </p>
     
-    <a class="btn" href="tel:+33782795833">📞 Appeler maintenant</a>
+    <a class="btn" href="tel:+33782795833">Appeler maintenant</a>
     
-    <button onclick="showMain()" style="background:none; border:none; color:white; text-decoration:underline; margin-top:25px; cursor:pointer; opacity:0.4; font-size: 12px;">Retour au menu</button>
+    <button onclick="showMain()" style="background:none; border:none; color:rgba(255,255,255,0.3); text-decoration:underline; margin-top:25px; cursor:pointer; font-size: 11px; font-family: 'Orbitron';">RETOUR</button>
   </div>
 
   <script>
     function showMaintenance() {
       document.getElementById('main-card').style.display = 'none';
-      document.getElementById('maintenance-screen').style.display = 'block';
+      const m = document.getElementById('maintenance-screen');
+      m.style.display = 'block';
+      m.classList.add('animate');
     }
     function showMain() {
       document.getElementById('maintenance-screen').style.display = 'none';
-      document.getElementById('main-card').style.display = 'block';
+      const main = document.getElementById('main-card');
+      main.style.display = 'block';
     }
   </script>
 
